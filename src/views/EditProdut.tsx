@@ -24,6 +24,9 @@ export const action = async ({ request, params }: ActionFunctionArgs) => {
         error = 'All the Field are necessary'
 
     }
+    if (+data.price < 1 && data.price !== '') {
+        error = 'Price must be greater than 0.'
+    }
     if (error.length) {
         return error
     }
@@ -92,7 +95,7 @@ export default function EditProduct() {
                         ))}
                     </select>
                 </div>
-                
+
                 <input
                     type="submit"
                     className="mt-5 w-full bg-blue-500 p-2 text-white font-bold text-lg cursor-pointer rounded hover:bg-indigo-900"

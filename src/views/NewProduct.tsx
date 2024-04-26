@@ -5,11 +5,14 @@ import ProductForm from '../components/ProductForm'
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const data = Object.fromEntries(await request.formData())
-  // console.log(data)
+  console.log(data.price)
   let error = ''
   if (Object.values(data).includes('')) {
     error = 'All the Field are necessary'
 
+  }
+  if (+data.price < 1 && data.price !== '') {
+    error = 'Price must be greater than 0.'
   }
   if (error.length) {
     return error
@@ -41,15 +44,15 @@ export default function NewProduct() {
 
       </div >
 
-      {error && <ErrorMessage children = {error} />}
+      {error && <ErrorMessage children={error} />}
 
       <Form
         className="mt-10"
         method='POST'
       >
 
-        <ProductForm/>
-        
+        <ProductForm />
+
         <input
           type="submit"
           className="mt-5 w-full bg-blue-500 p-2 text-white font-bold text-lg cursor-pointer rounded hover:bg-indigo-900"
