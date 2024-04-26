@@ -1,8 +1,7 @@
-import { Link, Form, useActionData, ActionFunctionArgs, redirect, useLocation, LoaderFunctionArgs, useLoaderData } from 'react-router-dom'
+import { Link, Form, useActionData, ActionFunctionArgs, redirect, LoaderFunctionArgs, useLoaderData } from 'react-router-dom'
 import ErrorMessage from '../components/ErrorMessage'
 import { editProduct, getProductById } from '../services/ProductService'
 import { Product } from '../types'
-import { object } from 'valibot'
 import ProductForm from '../components/ProductForm'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
