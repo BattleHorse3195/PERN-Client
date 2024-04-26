@@ -69,7 +69,7 @@ export default function ProductDetails({ product }: ProductDetailsPromps) {
 
                         >
                             <input
-                                className=" p-1 text-center text-white bg-blue-500 rounded hover:bg-blue-700 w-full"
+                                className=" p-1 text-center text-white bg-blue-500 rounded hover:bg-blue-700 w-full hover:cursor-pointer"
                                 type="submit"
                                 value='Delete'
 
